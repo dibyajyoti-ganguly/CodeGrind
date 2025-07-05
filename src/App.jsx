@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import TopCoder from "./components/TopCoder";
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
         </span>
       </div>
       <Navbar />
+      <TopCoder />
+      <hr className="mx-36 shadow-[0_0_0_1px_rgba(255,255,255,0.1)]" />
     </div>
   );
 }
