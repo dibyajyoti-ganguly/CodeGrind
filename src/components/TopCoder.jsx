@@ -1,11 +1,21 @@
 import useFetch from "../utils/useFetch";
+import crown from "../assets/king_2545603.png";
+import { FaGithub } from "react-icons/fa";
 
 function TopCoder() {
   const data = useFetch();
   if (data != null) {
     console.log(data[0]);
 
-    const { githubUsername, image, languageWiseTime, totalTimeToday } = data[0];
+    const {
+      githubUsername,
+      twitterUsername,
+      name,
+      image,
+      languageWiseTime,
+      totalTimeToday,
+      isOnline,
+    } = data[0];
 
     const hours = Math.floor(totalTimeToday / 3600);
     const minutes = Math.floor((totalTimeToday % 3600) / 60);
@@ -16,26 +26,45 @@ function TopCoder() {
     const otherCount = sorted.length - 2;
 
     return (
-      <div className="flex gap-7 items-start mx-36 px-5 pt-12 h-52">
+      <div className="relative flex gap-8 items-start mx-36 px-5 pt-12 h-[215px]">
         <img
           src={image}
           alt="dp"
-          className="w-[92px] rounded-3xl border-4 border-yellow-500"
+          className="w-[92px] h-[92px] rounded-3xl border-2 border-yellow-500 shadow-[0_0_12px_3px_rgba(234,179,8,0.8)]"
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src =
+              "https://t4.ftcdn.net/jpg/03/21/43/07/360_F_321430761_qQi0CU9tzI5w1k1vJgdA02LMtXtsXvJE.jpg";
+          }}
         />
-        <div className="text-white tracking-wide font-inter">
-          <p className="text-4xl font-bold mb-5">{githubUsername}</p>
+        <img src={crown} className="absolute z-10 w-7 top-8 left-[53px]" />
+        <div className="text-white tracking-wider font-inter">
+          <p className="text-4xl font-bold mb-4">{name}</p>
           <p className="text-base font-semibold mb-5">
             Crushing it with{" "}
-            <span className="text-violet-600 font-bold">
+            <span className="text-violet-600 font-extrabold">
               {hours}h {minutes}m
             </span>{" "}
             of pure coding today
           </p>
-          <ul className="flex text-base font-medium gap-9 text-zinc-500">
+          <ul className="flex text-base font-bold gap-9 text-zinc-500">
+            <li className="flex items-center gap-2 font-extrabold">
+              <FaGithub /> @ {githubUsername ? githubUsername : twitterUsername}
+            </li>
             <li className="text-violet-500">{sorted[0][0]}</li>
             <li className="text-violet-400">{sorted[1][0]}</li>
-            <li className="font-black">+{otherCount} more</li>
+            <li>+{otherCount} more</li>
           </ul>
+        </div>
+        <div className="flex flex-col items-center ml-auto w-60 h-32 pt-7 px-12 text-sm rounded-2xl shadow-[0_0_0_1px_rgba(255,255,255,0.1)]">
+          <p className="text-zinc-400 w-24 mb-3">Current Status</p>
+          <button
+            className={`font-semibold w-28 rounded-2xl p-2 bg-[rgba(107,114,128,0.2)] ${
+              isOnline ? "text-green-400" : "text-gray-400"
+            }`}
+          >
+            {isOnline ? "Online" : "Offline"}
+          </button>
         </div>
       </div>
     );
