@@ -23,7 +23,7 @@ const PerformerCard = (props) => {
 
   return (
     <div
-      className={`relative bg-zinc-900 text-white w-[400px] h-[260px] rounded-2xl p-6 border border-transparent font-inter ${shadowClass}`}
+      className={`relative bg-zinc-800 text-white w-[400px] h-[260px] rounded-2xl p-6 border border-transparent font-inter ${shadowClass}`}
     >
       <div className="flex items-center gap-5">
         <img src={image} alt="dp" className="w-16 rounded-2xl" />
@@ -41,7 +41,7 @@ const PerformerCard = (props) => {
       <ul className="flex text-xs font-bold gap-7 text-zinc-500 ml-4">
         <li className="text-violet-500">{sorted[0][0]}</li>
         <li className="text-violet-400">{sorted[1][0]}</li>
-        <li>+{otherCount} more</li>
+        {otherCount ? <li>+{otherCount} more</li> : ""}
       </ul>
     </div>
   );

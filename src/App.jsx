@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import TopCoder from "./components/TopCoder";
 import TopPerformers from "./components/TopPerformers";
+import BoardContainer from "./components/Boardcontainer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <TopCoder />
       <hr className="mx-36 shadow-[0_0_0_1px_rgba(255,255,255,0.1)]" />
       <TopPerformers />
+      <BoardContainer />
     </div>
   );
 }

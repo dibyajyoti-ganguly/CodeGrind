@@ -53,7 +53,7 @@ function TopCoder() {
             </li>
             <li className="text-violet-500">{sorted[0][0]}</li>
             <li className="text-violet-400">{sorted[1][0]}</li>
-            <li>+{otherCount} more</li>
+            {otherCount ? <li>+{otherCount} more</li> : ""}
           </ul>
         </div>
         <div className="flex flex-col items-center ml-auto w-60 h-32 pt-7 px-12 text-sm rounded-2xl shadow-[0_0_0_1px_rgba(255,255,255,0.1)]">

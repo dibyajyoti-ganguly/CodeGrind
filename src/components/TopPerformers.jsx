@@ -13,7 +13,7 @@ const TopPerformers = () => {
 
     return (
       <div className="relative">
-        <div className="flex items-center justify-between mt-10 font-inter mx-36">
+        <div className="flex items-center justify-between mt-7 font-inter mx-36">
           <p className="text-white text-2xl font-black tracking-wide">
             Top Performers
           </p>
@@ -29,12 +29,12 @@ const TopPerformers = () => {
         <img
           src={gold}
           alt="trophy"
-          className="absolute z-10 w-9 top-12 left-[525px]"
+          className="absolute z-10 w-9 top-12 left-[521px]"
         />
         <img
           src={silver}
           alt="trophy"
-          className="absolute z-10 w-9 top-12 left-[950px]"
+          className="absolute z-10 w-9 top-12 left-[940px]"
         />
         <img
           src={bronze}
