@@ -4,8 +4,11 @@ import PerformerCard from "../components/PerformerCard";
 import gold from "../assets/gold.png";
 import silver from "../assets/silver.png";
 import bronze from "../assets/bronze.png";
+import { useContext } from "react";
+import { ThemeContext } from "../App";
 
 const TopPerformers = () => {
+  const { theme } = useContext(ThemeContext);
   const data = useFetch();
   if (data != null) {
     const top_performers = data.slice(1, 4);
@@ -14,7 +17,11 @@ const TopPerformers = () => {
     return (
       <div className="relative">
         <div className="flex items-center justify-between mt-7 font-inter mx-36">
-          <p className="text-white text-2xl font-black tracking-wide">
+          <p
+            className={`${
+              theme === "dark" ? "text-white" : "text-zinc-950"
+            } text-2xl font-black tracking-wide`}
+          >
             Top Performers
           </p>
           <p className="flex items-center gap-2 text-zinc-400 text-sm">

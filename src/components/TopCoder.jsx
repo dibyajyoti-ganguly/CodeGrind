@@ -1,10 +1,13 @@
 import useFetch from "../utils/useFetch";
+import { useContext } from "react";
+import { ThemeContext } from "../App";
 import crown from "../assets/king_2545603.png";
 import { FaGithub } from "react-icons/fa";
 // eslint-disable-next-line no-unused-vars
 import { motion, scale } from "motion/react";
 
 function TopCoder() {
+  const { theme } = useContext(ThemeContext);
   const data = useFetch();
   if (data != null) {
     console.log(data[0]);
@@ -41,7 +44,11 @@ function TopCoder() {
           }}
         />
         <img src={crown} className="absolute z-10 w-7 top-8 left-[53px]" />
-        <div className="text-white tracking-wider font-inter">
+        <div
+          className={`${
+            theme === "dark" ? "text-white" : "text-zinc-950"
+          } tracking-wider font-inter`}
+        >
           <p className="text-4xl font-bold mb-4">{name}</p>
           <p className="text-base font-semibold mb-5">
             Crushing it with{" "}
@@ -62,7 +69,11 @@ function TopCoder() {
         <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="flex flex-col items-center ml-auto w-60 h-32 pt-7 px-12 text-sm rounded-2xl shadow-[0_0_0_1px_rgba(255,255,255,0.1)]"
+          className={`flex flex-col items-center ml-auto w-60 h-32 pt-7 px-12 text-sm rounded-2xl ${
+            theme === "dark"
+              ? "shadow-[0_0_0_1px_rgba(255,255,255,0.1)]"
+              : "shadow-[0_0_0_1px_rgba(0,0,0,0.1)]"
+          } `}
         >
           <p className="text-zinc-400 w-24 mb-3">Current Status</p>
           <button

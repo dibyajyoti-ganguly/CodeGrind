@@ -1,7 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
+import { useContext } from "react";
+import { ThemeContext } from "../App";
 
 const PerformerCard = (props) => {
+  const { theme } = useContext(ThemeContext);
   const rank = props.rank;
   const { name, image, totalTimeToday, languageWiseTime, isOnline } =
     props.details;
@@ -27,7 +30,9 @@ const PerformerCard = (props) => {
   return (
     <motion.div
       whileHover={{ y: -10 }}
-      className={`relative bg-zinc-800 text-white w-[400px] h-[260px] rounded-2xl p-6 border border-transparent font-inter ${shadowClass}`}
+      className={`relative ${
+        theme === "dark" ? "bg-zinc-800" : "bg-white"
+      } text-white w-[400px] h-[260px] rounded-2xl p-6 border border-transparent font-inter ${shadowClass}`}
     >
       <div className="flex items-center gap-5">
         <motion.img
@@ -36,7 +41,13 @@ const PerformerCard = (props) => {
           alt="dp"
           className="w-16 rounded-2xl"
         />
-        <p className="font-black text-lg">{name}</p>
+        <p
+          className={`font-black ${
+            theme === "dark" ? "" : "text-zinc-950"
+          } text-lg`}
+        >
+          {name}
+        </p>
       </div>
       <br />
       <div className="flex items-center justify-between text-sm text-zinc-400 font-bold">
