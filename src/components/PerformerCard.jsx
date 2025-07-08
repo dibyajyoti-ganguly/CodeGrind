@@ -1,3 +1,6 @@
+// eslint-disable-next-line no-unused-vars
+import { motion } from "motion/react";
+
 const PerformerCard = (props) => {
   const rank = props.rank;
   const { name, image, totalTimeToday, languageWiseTime, isOnline } =
@@ -22,11 +25,17 @@ const PerformerCard = (props) => {
   const status = isOnline ? "Online" : "Offline";
 
   return (
-    <div
+    <motion.div
+      whileHover={{ y: -10 }}
       className={`relative bg-zinc-800 text-white w-[400px] h-[260px] rounded-2xl p-6 border border-transparent font-inter ${shadowClass}`}
     >
       <div className="flex items-center gap-5">
-        <img src={image} alt="dp" className="w-16 rounded-2xl" />
+        <motion.img
+          whileTap={{ scale: 0.8 }}
+          src={image}
+          alt="dp"
+          className="w-16 rounded-2xl"
+        />
         <p className="font-black text-lg">{name}</p>
       </div>
       <br />
@@ -43,7 +52,7 @@ const PerformerCard = (props) => {
         <li className="text-violet-400">{sorted[1][0]}</li>
         {otherCount ? <li>+{otherCount} more</li> : ""}
       </ul>
-    </div>
+    </motion.div>
   );
 };
 

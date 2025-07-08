@@ -1,6 +1,8 @@
 import useFetch from "../utils/useFetch";
 import crown from "../assets/king_2545603.png";
 import { FaGithub } from "react-icons/fa";
+// eslint-disable-next-line no-unused-vars
+import { motion, scale } from "motion/react";
 
 function TopCoder() {
   const data = useFetch();
@@ -27,7 +29,8 @@ function TopCoder() {
 
     return (
       <div className="relative flex gap-8 items-start mx-36 px-5 pt-12 h-[215px]">
-        <img
+        <motion.img
+          whileTap={{ scale: 0.8 }}
           src={image}
           alt="dp"
           className="w-[92px] h-[92px] rounded-3xl border-2 border-yellow-500 shadow-[0_0_12px_3px_rgba(234,179,8,0.8)]"
@@ -56,7 +59,11 @@ function TopCoder() {
             {otherCount ? <li>+{otherCount} more</li> : ""}
           </ul>
         </div>
-        <div className="flex flex-col items-center ml-auto w-60 h-32 pt-7 px-12 text-sm rounded-2xl shadow-[0_0_0_1px_rgba(255,255,255,0.1)]">
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          className="flex flex-col items-center ml-auto w-60 h-32 pt-7 px-12 text-sm rounded-2xl shadow-[0_0_0_1px_rgba(255,255,255,0.1)]"
+        >
           <p className="text-zinc-400 w-24 mb-3">Current Status</p>
           <button
             className={`font-semibold w-28 rounded-2xl p-2 bg-[rgba(107,114,128,0.2)] ${
@@ -65,7 +72,7 @@ function TopCoder() {
           >
             {isOnline ? "Online" : "Offline"}
           </button>
-        </div>
+        </motion.div>
       </div>
     );
   }
