@@ -11,7 +11,7 @@ const TopPerformers = ({ data }) => {
 
   if (data != null) {
     const top_performers = data;
-    console.log(top_performers);
+    //console.log(top_performers);
 
     return (
       <div className="relative">
@@ -33,7 +33,9 @@ const TopPerformers = ({ data }) => {
         </div>
         <div className="flex items-center gap-6 mt-8 mx-36">
           {top_performers.map((top_performer, index) => {
-            return <PerformerCard details={top_performer} rank={index} />;
+            return (
+              <PerformerCard details={top_performer} key={index} rank={index} />
+            );
           })}
         </div>
         <img

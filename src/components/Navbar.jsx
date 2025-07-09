@@ -4,15 +4,13 @@ import { LuSun } from "react-icons/lu";
 import { useContext } from "react";
 import { ThemeContext } from "../App";
 
-const Navbar = () => {
+const Navbar = ({ setIsTransitioning }) => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   return (
     <div
       className={`w-full z-50 h-[75px] ${
-        theme === "dark"
-          ? "bg-zinc-900"
-          : "bg-white shadow-xs shadow-slate-300"
+        theme === "dark" ? "bg-zinc-900" : "bg-white shadow-xs shadow-slate-300"
       } flex items-center px-36`}
     >
       <img src={code} alt="code" className="w-10 mr-3" />
@@ -25,7 +23,11 @@ const Navbar = () => {
       </h1>
       <button
         onClick={() => {
-          theme === "dark" ? setTheme("light") : setTheme("dark");
+          setIsTransitioning(true);
+          setTimeout(() => {
+            theme === "dark" ? setTheme("light") : setTheme("dark");
+            setIsTransitioning(false);
+          }, 500);
         }}
         className={`ml-auto p-2 rounded-lg ${
           theme === "dark"

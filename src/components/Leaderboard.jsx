@@ -7,7 +7,7 @@ const Leaderboard = ({ data }) => {
 
   if (data !== null) {
     const leaderboard = data;
-    console.log(leaderboard);
+    //console.log(leaderboard);
 
     return (
       <div
@@ -22,7 +22,8 @@ const Leaderboard = ({ data }) => {
         >
           <p className="ml-3">#</p>
           <p className="ml-[70px]">Developer</p>
-          <p className="ml-[362px]">Time Today</p>
+          <p className="ml-[358px]">Time Today</p>
+          <p className="ml-[53px]">Languages</p>
           <p className="ml-auto mr-2">Status</p>
         </div>
         {leaderboard.map((user, index) => {

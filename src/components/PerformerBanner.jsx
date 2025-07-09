@@ -11,6 +11,7 @@ const PerformerBanner = (props) => {
   const minutes = Math.floor((totalTimeToday % 3600) / 60);
 
   const sorted = Object.entries(languageWiseTime).sort((a, b) => b[1] - a[1]);
+  const topTwoLanguages = sorted.slice(0, 2).map((item) => item[0]);
 
   const otherCount = sorted.length - 2;
 
@@ -53,8 +54,8 @@ const PerformerBanner = (props) => {
           {hours}h {minutes}m
         </p>
         <ul className="absolute z-10 flex text-xs font-bold gap-7 text-zinc-500 left-[730px]">
-          <li className="text-violet-500">{sorted[0][0]}</li>
-          <li className="text-violet-400">{sorted[1][0]}</li>
+          <li className="text-violet-500">{topTwoLanguages[0]}</li>
+          <li className="text-violet-400">{topTwoLanguages[1]}</li>
           {otherCount ? <li>+{otherCount} more</li> : ""}
         </ul>
         <p
