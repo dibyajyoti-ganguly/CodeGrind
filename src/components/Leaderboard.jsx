@@ -1,13 +1,12 @@
-import useFetch from "../utils/useFetch";
 import PerformerBanner from "./PerformerBanner";
 import { useContext } from "react";
 import { ThemeContext } from "../App";
 
-const Leaderboard = () => {
+const Leaderboard = ({ data }) => {
   const { theme } = useContext(ThemeContext);
-  const data = useFetch();
+
   if (data !== null) {
-    const leaderboard = data.slice(4);
+    const leaderboard = data;
     console.log(leaderboard);
 
     return (
@@ -27,7 +26,7 @@ const Leaderboard = () => {
           <p className="ml-auto mr-2">Status</p>
         </div>
         {leaderboard.map((user, index) => {
-          return <PerformerBanner details={user} rank={index} />;
+          return <PerformerBanner key={index} details={user} rank={index} />;
         })}
       </div>
     );

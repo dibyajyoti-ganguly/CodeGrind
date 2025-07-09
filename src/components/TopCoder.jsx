@@ -1,4 +1,3 @@
-import useFetch from "../utils/useFetch";
 import { useContext } from "react";
 import { ThemeContext } from "../App";
 import crown from "../assets/king_2545603.png";
@@ -6,12 +5,10 @@ import { FaGithub } from "react-icons/fa";
 // eslint-disable-next-line no-unused-vars
 import { motion, scale } from "motion/react";
 
-function TopCoder() {
+function TopCoder({ data }) {
   const { theme } = useContext(ThemeContext);
-  const data = useFetch();
-  if (data != null) {
-    console.log(data[0]);
 
+  if (data != null) {
     const {
       githubUsername,
       twitterUsername,
@@ -20,7 +17,7 @@ function TopCoder() {
       languageWiseTime,
       totalTimeToday,
       isOnline,
-    } = data[0];
+    } = data;
 
     const hours = Math.floor(totalTimeToday / 3600);
     const minutes = Math.floor((totalTimeToday % 3600) / 60);

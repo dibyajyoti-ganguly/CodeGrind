@@ -1,5 +1,4 @@
 import { GrTrophy } from "react-icons/gr";
-import useFetch from "../utils/useFetch";
 import PerformerCard from "../components/PerformerCard";
 import gold from "../assets/gold.png";
 import silver from "../assets/silver.png";
@@ -7,11 +6,11 @@ import bronze from "../assets/bronze.png";
 import { useContext } from "react";
 import { ThemeContext } from "../App";
 
-const TopPerformers = () => {
+const TopPerformers = ({ data }) => {
   const { theme } = useContext(ThemeContext);
-  const data = useFetch();
+
   if (data != null) {
-    const top_performers = data.slice(1, 4);
+    const top_performers = data;
     console.log(top_performers);
 
     return (

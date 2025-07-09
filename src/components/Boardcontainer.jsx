@@ -3,7 +3,7 @@ import Leaderboard from "./Leaderboard";
 import { useContext } from "react";
 import { ThemeContext } from "../App";
 
-const Boardcontainer = () => {
+const Boardcontainer = ({ data }) => {
   const { theme } = useContext(ThemeContext);
   return (
     <div className="text-white mt-8 pb-8 mx-36">
@@ -23,7 +23,7 @@ const Boardcontainer = () => {
           <FaUserGroup /> Ranks 5 - 20
         </p>
       </div>
-      <Leaderboard />
+      <Leaderboard data={data} />
     </div>
   );
 };
