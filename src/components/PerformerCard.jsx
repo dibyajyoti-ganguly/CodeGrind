@@ -52,7 +52,7 @@ const PerformerCard = (props) => {
       <br />
       <div className="flex items-center justify-between text-sm text-zinc-400 font-bold">
         <p className="text-xs text-zinc-400 mb-2">Time Today</p>
-        <p>{status}</p>
+        <p className={`${isOnline ? "text-green-400" : ""}`}>{status}</p>
       </div>
       <p className="text-violet-500 text-2xl font-extrabold mb-3">
         {hours} h {minutes} m

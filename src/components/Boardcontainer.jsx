@@ -15,7 +15,11 @@ const Boardcontainer = () => {
         >
           Full Leaderboard
         </p>
-        <p className="flex items-center gap-2 text-zinc-400 text-sm">
+        <p
+          className={`flex items-center gap-2 ${
+            theme == "dark" ? "text-zinc-400" : "text-zinc-700 font-semibold"
+          } text-sm`}
+        >
           <FaUserGroup /> Ranks 5 - 20
         </p>
       </div>

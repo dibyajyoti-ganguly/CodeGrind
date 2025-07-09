@@ -16,7 +16,11 @@ const Leaderboard = () => {
           theme === "dark" ? "bg-zinc-900" : "bg-zinc-100"
         } mt-8 rounded-2xl shadow-[0_0_0_0.3px_rgba(161,161,170,0.8)]`}
       >
-        <div className="flex items-center h-12 mb-1.5 text-sm px-20 text-zinc-400 font-bold">
+        <div
+          className={`flex items-center h-12 mb-1.5 text-sm px-20 ${
+            theme === "dark" ? "text-zinc-400" : "text-zinc-700"
+          } font-bold`}
+        >
           <p className="ml-3">#</p>
           <p className="ml-[70px]">Developer</p>
           <p className="ml-[362px]">Time Today</p>

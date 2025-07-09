@@ -75,10 +75,16 @@ function TopCoder() {
               : "shadow-[0_0_0_1px_rgba(0,0,0,0.1)]"
           } `}
         >
-          <p className="text-zinc-400 w-24 mb-3">Current Status</p>
+          <p
+            className={`${
+              theme === "dark" ? "text-zinc-400" : "text-zinc-700"
+            } w-24 mb-3`}
+          >
+            Current Status
+          </p>
           <button
             className={`font-semibold w-28 rounded-2xl p-2 bg-[rgba(107,114,128,0.2)] ${
-              isOnline ? "text-green-400" : "text-gray-400"
+              isOnline ? "text-green-400" : "text-zinc-600"
             }`}
           >
             {isOnline ? "Online" : "Offline"}

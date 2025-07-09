@@ -30,8 +30,10 @@ const PerformerBanner = (props) => {
       >
         <button
           className={`bg-black w-9 h-9 pt-0.5 ${
-            theme === "dark" ? "bg-zinc-950" : "bg-zinc-200 text-black"
-          } rounded-lg opacity-50 font-bold`}
+            theme === "dark"
+              ? "bg-zinc-950 opacity-50"
+              : "bg-zinc-200 text-black opacity-80"
+          } rounded-lg font-bold`}
         >
           {rank + 5}
         </button>
@@ -55,7 +57,13 @@ const PerformerBanner = (props) => {
           <li className="text-violet-400">{sorted[1][0]}</li>
           {otherCount ? <li>+{otherCount} more</li> : ""}
         </ul>
-        <p className="ml-auto font-bold text-zinc-400">{status}</p>
+        <p
+          className={`ml-auto ${
+            isOnline ? "text-green-400" : ""
+          } font-bold text-zinc-400`}
+        >
+          {status}
+        </p>
       </div>
     </>
   );
