@@ -59,8 +59,8 @@ const PerformerBanner = (props) => {
             </div>
             <p
               className={`${
-                isOnline ? "text-green-400" : ""
-              } font-bold text-zinc-400 text-sm`}
+                isOnline ? "text-green-400" : "text-zinc-400"
+              } font-bold text-sm`}
             >
               {status}
             </p>
