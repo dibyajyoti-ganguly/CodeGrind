@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { ThemeContext } from "../App";
-import crown from "../assets/king_2545603.png";
 import { FaGithub } from "react-icons/fa";
 // eslint-disable-next-line no-unused-vars
 import { motion, scale } from "motion/react";
@@ -40,10 +39,6 @@ function TopCoder({ data }) {
               e.target.src =
                 "https://t4.ftcdn.net/jpg/03/21/43/07/360_F_321430761_qQi0CU9tzI5w1k1vJgdA02LMtXtsXvJE.jpg";
             }}
-          />
-          <img
-            src={crown}
-            className="absolute z-10 w-6 sm:w-7 -top-4 sm:top-0 left-1/2 transform -translate-x-1/2 sm:translate-x-0 sm:left-[53px]"
           />
         </div>
 
