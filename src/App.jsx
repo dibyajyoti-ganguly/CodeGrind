@@ -46,6 +46,7 @@ function App() {
             </span>
           </div>
           <Navbar setIsTransitioning={setIsTransitioning} />
+          <br className="sm:hidden" />
           <TopCoder data={data[0]} />
           <hr
             className={`mx-36 ${

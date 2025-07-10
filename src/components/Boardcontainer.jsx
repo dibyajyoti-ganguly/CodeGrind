@@ -6,10 +6,10 @@ import { ThemeContext } from "../App";
 const Boardcontainer = ({ data }) => {
   const { theme } = useContext(ThemeContext);
   return (
-    <div className="text-white mt-8 pb-8 mx-36">
-      <div className="flex justify-between">
+    <div className="text-white mt-6 sm:mt-8 pb-6 sm:pb-8 mx-4 sm:mx-8 lg:mx-36">
+      <div className="flex sm:flex-row justify-between items-center sm:items-center gap-2 sm:gap-0">
         <p
-          className={`text-2xl font-black ${
+          className={`text-xl sm:text-2xl font-black ${
             theme === "dark" ? "" : "text-zinc-950"
           } tracking-wide`}
         >

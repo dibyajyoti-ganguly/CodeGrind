@@ -11,13 +11,17 @@ const Navbar = ({ setIsTransitioning }) => {
     <div
       className={`w-full z-50 h-[75px] ${
         theme === "dark" ? "bg-zinc-900" : "bg-white shadow-xs shadow-slate-300"
-      } flex items-center px-36`}
+      } flex items-center px-4 sm:px-8 lg:px-36`}
     >
-      <img src={code} alt="code" className="w-10 mr-3" />
+      <img
+        src={code}
+        alt="code"
+        className="w-8 sm:w-10 mr-2 sm:mr-3 flex-shrink-0"
+      />
       <h1
-        className={`text-2xl ${
+        className={`text-xl sm:text-2xl ${
           theme === "dark" ? "text-white" : "text-zinc-900"
-        } font-bold tracking-wide`}
+        } font-bold tracking-wide truncate`}
       >
         CodeGrind
       </h1>
@@ -33,12 +37,12 @@ const Navbar = ({ setIsTransitioning }) => {
           theme === "dark"
             ? "bg-zinc-900 shadow-[0_0_0_1px_rgba(255,255,255,0.1)]"
             : "bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.1)]"
-        } cursor-pointer`}
+        } cursor-pointer flex-shrink-0`}
       >
         {theme === "dark" ? (
-          <FaRegMoon className="text-white w-5 h-5" />
+          <FaRegMoon className="text-white w-4 h-4 sm:w-5 sm:h-5" />
         ) : (
-          <LuSun />
+          <LuSun className="w-4 h-4 sm:w-5 sm:h-5" />
         )}
       </button>
     </div>
