@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import Loading from "./components/Loading";
 import Navbar from "./components/Navbar";
 import TopCoder from "./components/TopCoder";
 import TopPerformers from "./components/TopPerformers";
@@ -14,7 +15,9 @@ function App() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const data = useFetch();
 
-  if (data != null) {
+  if (data === null) {
+    return <Loading />;
+  } else {
     return (
       <ThemeContext.Provider value={{ theme, setTheme }}>
         <AnimatePresence>
