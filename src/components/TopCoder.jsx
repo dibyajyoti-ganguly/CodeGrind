@@ -87,7 +87,7 @@ function TopCoder({ data }) {
         </p>
         <button
           className={`font-semibold w-28 rounded-2xl p-2 bg-[rgba(107,114,128,0.2)] ${
-            isOnline ? "text-green-400" : "text-zinc-600"
+            isOnline ? "text-green-400" : "text-zinc-400"
           }`}
         >
           {isOnline ? "Online" : "Offline"}
