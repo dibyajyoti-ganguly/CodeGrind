@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { GrTrophy } from "react-icons/gr";
 import PerformerCard from "../components/PerformerCard";
 import gold from "../assets/gold.png";
@@ -32,7 +33,7 @@ const TopPerformers = ({ data }) => {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 mt-6 sm:mt-8 mx-4 sm:mx-8 lg:mx-36">
+        <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 mt-6 sm:mt-8 mx-4 sm:mx-8 lg:mx-36">
           {top_performers.map((top_performer, index) => {
             return (
               <div key={index} className="w-full sm:w-auto">
@@ -43,7 +44,7 @@ const TopPerformers = ({ data }) => {
         </div>
 
         {/* Trophy images - hidden on mobile for cleaner look */}
-        <img
+        {/*<img
           src={gold}
           alt="trophy"
           className="absolute z-10 w-8 sm:w-9 top-10 sm:top-12 left-[45%] sm:left-[521px] hidden sm:block"
@@ -57,7 +58,7 @@ const TopPerformers = ({ data }) => {
           src={bronze}
           alt="trophy"
           className="absolute z-10 w-8 sm:w-9 top-10 sm:top-12 right-[15%] sm:right-[127px] hidden lg:block"
-        />
+        />*/}
       </div>
     );
   }

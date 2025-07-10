@@ -29,22 +29,22 @@ const PerformerCard = (props) => {
 
   return (
     <motion.div
-      whileHover={{ y: -10 }}
+      whileHover={{ y: window.innerWidth >= 1024 ? -10 : 0 }} // Only animate on desktop
       className={`relative ${
         theme === "dark" ? "bg-zinc-800" : "bg-white"
-      } text-white w-[400px] h-[260px] rounded-2xl p-6 border border-transparent font-inter ${shadowClass}`}
+      } text-white w-[360px] sm:w-[360px] lg:w-[390px] h-[240px] sm:h-[260px] rounded-2xl mx-auto p-4 sm:p-6 border border-transparent font-inter ${shadowClass} lg:hover:-translate-y-2 transition-transform duration-300`}
     >
-      <div className="flex items-center gap-5">
+      <div className="flex items-center gap-3 sm:gap-5">
         <motion.img
           whileTap={{ scale: 0.8 }}
           src={image}
           alt="dp"
-          className="w-16 rounded-2xl"
+          className="w-12 sm:w-16 rounded-2xl"
         />
         <p
           className={`font-black ${
             theme === "dark" ? "" : "text-zinc-950"
-          } text-lg`}
+          } text-base sm:text-lg`}
         >
           {name}
         </p>
@@ -54,11 +54,11 @@ const PerformerCard = (props) => {
         <p className="text-xs text-zinc-400 mb-2">Time Today</p>
         <p className={`${isOnline ? "text-green-400" : ""}`}>{status}</p>
       </div>
-      <p className="text-violet-500 text-2xl font-extrabold mb-3">
+      <p className="text-violet-500 text-xl sm:text-2xl font-extrabold mb-3">
         {hours} h {minutes} m
       </p>
       <p className="text-xs text-zinc-400 mb-3.5">Languages</p>
-      <ul className="flex text-xs font-bold gap-7 text-zinc-500 ml-4">
+      <ul className="flex text-xs font-bold gap-4 sm:gap-7 text-zinc-500 ml-2 sm:ml-4">
         <li className="text-violet-500">{sorted[0][0]}</li>
         <li className="text-violet-400">{sorted[1][0]}</li>
         {otherCount ? <li>+{otherCount} more</li> : ""}
