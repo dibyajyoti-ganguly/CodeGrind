@@ -37,7 +37,6 @@ const Leaderboard = ({ data }) => {
         >
           <p className="w-8">#</p>
           <p className="flex-1">Developer</p>
-          <p className="w-16 text-center">Time</p>
           <p className="w-16 text-center">Status</p>
         </div>
 
