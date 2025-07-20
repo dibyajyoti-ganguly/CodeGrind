@@ -63,9 +63,9 @@ function TopCoder({ data }) {
             </li>
             <div className="mt-2 sm:mt-0" />
 
-            <li className="text-violet-500">{sorted[0][0]}</li>
-            <li className="text-violet-400">{sorted[1][0]}</li>
-            {otherCount ? <li>+{otherCount} more</li> : ""}
+            {sorted[0] && <li className="text-violet-500">{sorted[0][0]}</li>}
+            {sorted[1] && <li className="text-violet-400">{sorted[1][0]}</li>}
+            {otherCount > 0 && <li>+{otherCount} more</li>}
           </ul>
         </div>
       </div>
